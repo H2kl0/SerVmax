@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Sparks</title>
+</head>
+<body>
+    <h1>Todas mis ideas</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Añadir idea</button>
+    </form>
+    <ul>
+        {% for spark in sparks %}
+            <li>
+                <a href="{% url 'spark_detail' spark.id %}">{{ spark.content }}</a>
+                
+                <a href="{% url 'spark_edit' spark.id %}">Editar</a>
+                
+                <form method="post" action="{% url 'spark_delete' spark.id %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit">Eliminar</button>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

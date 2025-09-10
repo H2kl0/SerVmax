@@ -1,0 +1,12 @@
+#ignorar el entorno virtual
+venv/
+
+#ignorar la base de datos local
+db.sqlite3
+
+#ignorar archivos de caché de Python
+__pycache__/
+*.pyc
+
+#ignorar el .env
+.env

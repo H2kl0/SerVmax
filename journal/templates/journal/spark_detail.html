@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spark Detail</title>
+</head>
+<body>
+    <h1>Tu Chispa:</h1>
+    <p>{{ spark.content }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Generar idea</button>
+    </form>
+    <hr>
+    <a href="{% url 'spark_detail' spark.id %}">Volver a la lista</a>
+    {% if ai_responses %}
+    <h2>Ideas Generadas:</h2>
+    {{ ai_responses|linebreaks }}
+    {% endif %}
+</body>
+</html>

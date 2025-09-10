@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Spark</title>
+</head>
+<body>
+    <h2>Editar mi idea</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar cambios</button>
+    </form>
+    <br>
+    <a href="{% url 'spark_list' %}">Cancelar</a>
+</body>
+</html>
