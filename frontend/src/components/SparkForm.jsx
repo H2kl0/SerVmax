@@ -48,7 +48,8 @@ function SparkForm({ handleSubmit, newSparkContent, setNewSparkContent }) {
   };
 
   return (
-    <div className="form-container">
+    <div className="form-container interactive-bg">
+      <h1 className="main-title">Mimir</h1>
       <form onSubmit={onSubmit} className="spark-form">
         <div className="form-group">
           <input
@@ -77,7 +78,7 @@ function SparkForm({ handleSubmit, newSparkContent, setNewSparkContent }) {
           )}
         </div>
 
-       <center><button 
+        <button 
           type="submit" 
           className="spark-button"
           disabled={isLoading || !newSparkContent.trim()}
@@ -88,15 +89,12 @@ function SparkForm({ handleSubmit, newSparkContent, setNewSparkContent }) {
               Guardando...
             </>
           ) : (
-            <>
-               Añadir Idea
-            </>
+            'Añadir Idea'
           )}
-        </button></center> 
+        </button>
 
         <div className="form-hint">
-           Tip: Presiona Ctrl+Enter para enviar rápidamente 
-           
+          Tip: Presiona Ctrl+Enter para enviar rápidamente 
         </div>
         <div className="mb-3">
           Nueva funcion con Aprender:(sobre el reino animal)

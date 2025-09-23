@@ -50,7 +50,7 @@ function Home() {
   return (
     <div className="home-container">
       <div className="left-column">
-        <h2 className="main-title">Tus Ideas Recientes</h2>
+        
         <SparkForm
           handleSubmit={handleFormSubmit}
           newSparkContent={newSparkContent}

@@ -6,6 +6,8 @@ import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Sidebar from './components/SideBar';
 import Home from './components/Home';
+import GuideView from './components/GuideView';
+import IdeasView from './components/IdeasView';
 
 function MainLayout({ authToken, setAuthToken }) {
   const handleLogout = () => {
@@ -21,7 +23,7 @@ function MainLayout({ authToken, setAuthToken }) {
 
   return (
     <div className="flex bg-gray-900 text-white min-h-screen font-sans">
-      <Sidebar handleLogout={handleLogout} />
+      
       <main className="flex-grow p-8">
         {/* Outlet ahora pasa el token a los componentes hijos (Home) */}
         <Outlet context={{ authToken, setAuthToken }} />
@@ -47,6 +49,8 @@ function App() {
         }
       >
         <Route index element={<Home />} />
+        <Route path="guide" element={<GuideView />} />
+        <Route path="ideas" element={<IdeasView />} />
         {/* Futuras rutas anidadas como /profile irían aquí */}
       </Route>
     </Routes>

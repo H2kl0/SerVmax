@@ -1,0 +1,452 @@
+/* ===================================== */
+/* GUIDEVIEW - CSS ESPECÍFICO CON BUENAS PRÁCTICAS */
+/* ===================================== */
+
+/* Variables CSS para consistencia */
+:root {
+  --guide-title-color: #ffffff;
+  --guide-subtitle-color: #ffffff;
+  --guide-text-color: #e0e0e0;
+  --guide-accent-color: #64b5f6;
+  --guide-bg-primary: #1a1a2e;
+  --guide-bg-secondary: #16213e;
+  --guide-border-color: #2d3748;
+  --guide-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor principal de la guía */
+.guide-view {
+  min-height: 100vh;
+  background: var(--guide-bg-primary);
+  padding: 2rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+}
+
+.guide-view-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ===================================== */
+/* NAVEGACIÓN */
+/* ===================================== */
+.guide-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--guide-border-color);
+}
+
+.guide-navigation .back-btn,
+.guide-navigation .nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--guide-bg-secondary);
+  color: var(--guide-title-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  border: 1px solid var(--guide-border-color);
+  transition: all 0.3s ease;
+}
+
+.guide-navigation .back-btn:hover,
+.guide-navigation .nav-btn:hover {
+  background: var(--guide-accent-color);
+  transform: translateY(-2px);
+  box-shadow: var(--guide-shadow);
+}
+
+/* ===================================== */
+/* TÍTULOS - TODOS BLANCOS Y VISIBLES */
+/* OVERRIDE ESPECÍFICO PARA COMBATIR CSS GLOBAL */
+/* ===================================== */
+.guide-view h1,
+.guide-view h2,
+.guide-view h3,
+.guide-view h4,
+.guide-view h5,
+.guide-view h6 {
+  color: var(--guide-title-color) !important;
+  background: none !important;
+  background-image: none !important;
+  background-clip: unset !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: var(--guide-title-color) !important;
+  text-shadow: none !important;
+  backdrop-filter: none !important;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+/* OVERRIDE MUY ESPECÍFICO PARA COMBATIR index.css */
+.guide-view h1.guide-view h1,
+.guide-view h2.guide-view h2 {
+  background: none !important;
+  background-image: none !important;
+  background-clip: unset !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: var(--guide-title-color) !important;
+  color: var(--guide-title-color) !important;
+}
+
+/* Títulos principales */
+.guide-view .guide-title-section h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: var(--guide-title-color) !important;
+}
+
+.guide-view .guide-title-section p {
+  font-size: 1.25rem;
+  color: var(--guide-text-color);
+  text-align: center;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Títulos de sección */
+.guide-view .guide-types h2,
+.guide-view .guide-tips-section h2,
+.guide-view .guide-examples-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--guide-title-color) !important;
+  margin-bottom: 2rem;
+}
+
+/* ===================================== */
+/* HEADER DE LA GUÍA */
+/* ===================================== */
+.guide-header-section {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 2rem 0;
+}
+
+.guide-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.mimir-logo-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--guide-accent-color);
+}
+
+/* ===================================== */
+/* TARJETAS DE INTRODUCCIÓN */
+/* ===================================== */
+.guide-intro {
+  margin-bottom: 4rem;
+}
+
+.intro-card {
+  background: var(--guide-bg-secondary);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid var(--guide-border-color);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  box-shadow: var(--guide-shadow);
+}
+
+.intro-card h2 {
+  color: var(--guide-title-color) !important;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.intro-card p {
+  color: var(--guide-text-color);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ===================================== */
+/* GRID DE TIPOS DE RESPUESTA */
+/* ===================================== */
+.guide-types {
+  margin-bottom: 4rem;
+}
+
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.type-card {
+  background: var(--guide-bg-secondary);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid var(--guide-border-color);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.type-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--guide-accent-color);
+}
+
+.type-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  border-color: var(--guide-accent-color);
+}
+
+.type-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.type-icon {
+  flex-shrink: 0;
+  padding: 0.75rem;
+  background: var(--guide-bg-primary);
+  border-radius: 12px;
+  border: 1px solid var(--guide-border-color);
+}
+
+.type-info h3 {
+  color: var(--guide-title-color) !important;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.type-description {
+  color: var(--guide-text-color);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Ejemplos en las tarjetas */
+.type-example {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: var(--guide-bg-primary);
+  border-radius: 12px;
+  border: 1px solid var(--guide-border-color);
+}
+
+.type-example h4 {
+  color: var(--guide-accent-color) !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.type-example code {
+  background: var(--guide-bg-secondary);
+  color: var(--guide-accent-color);
+  padding: 0.75rem;
+  border-radius: 8px;
+  display: block;
+  font-weight: 500;
+  border: 1px solid var(--guide-border-color);
+  font-family: 'Fira Code', 'Consolas', monospace;
+}
+
+/* Características */
+.type-features h4 {
+  color: var(--guide-accent-color) !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.type-features ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  list-style-type: none;
+}
+
+.type-features li {
+  color: var(--guide-text-color);
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.type-features li::before {
+  content: '✓';
+  color: var(--guide-accent-color);
+  font-weight: bold;
+  position: absolute;
+  left: -1.5rem;
+}
+
+/* ===================================== */
+/* SECCIÓN DE CONSEJOS */
+/* ===================================== */
+.guide-tips-section {
+  margin-bottom: 4rem;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.tip-card {
+  background: var(--guide-bg-secondary);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid var(--guide-border-color);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--guide-shadow);
+}
+
+.tip-card h3 {
+  color: var(--guide-title-color) !important;
+  font-size: 1.2rem;
+  margin: 1rem 0 0.75rem 0;
+}
+
+.tip-card p {
+  color: var(--guide-text-color);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===================================== */
+/* EJEMPLOS PRÁCTICOS */
+/* ===================================== */
+.guide-examples-section {
+  margin-bottom: 3rem;
+}
+
+.examples-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.example-item {
+  background: var(--guide-bg-secondary);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--guide-border-color);
+  line-height: 1.7;
+  color: var(--guide-text-color);
+}
+
+.example-item strong {
+  color: var(--guide-title-color);
+}
+
+/* ===================================== */
+/* RESPONSIVE DESIGN */
+/* ===================================== */
+@media (max-width: 768px) {
+  .guide-view {
+    padding: 1rem;
+  }
+  
+  .guide-view .guide-title-section h1 {
+    font-size: 2.5rem;
+  }
+  
+  .guide-view .guide-types h2,
+  .guide-view .guide-tips-section h2,
+  .guide-view .guide-examples-section h2 {
+    font-size: 2rem;
+  }
+  
+  .guide-navigation {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .types-grid,
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .guide-logo {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .intro-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .guide-view .guide-title-section h1 {
+    font-size: 2rem;
+  }
+  
+  .type-card,
+  .tip-card {
+    padding: 1.5rem;
+  }
+}
+
+/* ===================================== */
+/* OVERRIDE PARA CUALQUIER ESTILO PROBLEMÁTICO */
+/* ===================================== */
+.guide-view *[style*="background-image"],
+.guide-view *[style*="linear-gradient"],
+.guide-view *[style*="gradient"],
+.guide-view *[style*="background-clip"],
+.guide-view *[style*="-webkit-background-clip"] {
+  background-image: none !important;
+  background-clip: unset !important;
+  -webkit-background-clip: unset !important;
+  color: var(--guide-title-color) !important;
+}
+
+/* Asegurar que TODOS los elementos de texto sean legibles */
+.guide-view * {
+  color: var(--guide-text-color);
+}
+
+.guide-view h1, .guide-view h2, .guide-view h3, 
+.guide-view h4, .guide-view h5, .guide-view h6 {
+  color: var(--guide-title-color) !important;
+}

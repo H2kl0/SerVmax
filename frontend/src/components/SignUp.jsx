@@ -54,9 +54,9 @@ function SignUp() {
         <button type="submit" className="spark-button">Registrarse</button>
       </form>
         <p style={{ marginTop: '1.5rem', textAlign: 'center', color: 'var(--text-secondary)' }}>
-          ¿No tienes una cuenta?{' '}
+          ¿Ya tienes una cuenta?{' '}
           <Link to="/login" style={{ color: 'var(--electric-blue)', fontWeight: '600' }}>
-            Regístrate aquí
+            Iniciar sesión
           </Link>
         </p>
     </div>
